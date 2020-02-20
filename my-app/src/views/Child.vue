@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-02-20 22:02:30
- * @LastEditTime: 2020-02-20 22:28:56
+ * @LastEditTime: 2020-02-20 22:37:30
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \VueElement-admin-Project\my-app\src\views\Child.vue
@@ -22,10 +22,15 @@
                 default: ''
             }
         },
+        data(){
+            return {
+                childMsg: 'child msg'
+            }
+        },
         methods:{
             passMsg(){
                 this.$emit('showMsg','i from Child')
-            }
+            },
         }
     }
 </script>

@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-02-20 22:02:19
- * @LastEditTime: 2020-02-20 22:28:01
+ * @LastEditTime: 2020-02-20 22:38:54
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \VueElement-admin-Project\my-app\src\views\Parent.vue
@@ -28,6 +28,10 @@
             showMsg(val){
                 this.parentMsg = val;
             }
+        },
+        mounted(){
+            // 这是一个组件
+            console.log(this.$children[0].childMsg);
         }
     }
 </script>
