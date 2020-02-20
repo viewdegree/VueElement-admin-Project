@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-02-20 22:02:19
- * @LastEditTime: 2020-02-20 22:38:54
+ * @LastEditTime: 2020-02-20 22:49:40
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \VueElement-admin-Project\my-app\src\views\Parent.vue
@@ -9,7 +9,7 @@
 <template>
     <div>
         <h1>Parent</h1>
-        <m-child :msg="parentMsg"  @showMsg="showMsg"></m-child>
+        <m-child :msg="parentMsg"  @showMsg="showMsg" ref="child"></m-child>
     </div>
 </template>
 
@@ -32,6 +32,7 @@
         mounted(){
             // 这是一个组件
             console.log(this.$children[0].childMsg);
+            console.log(this.$refs.child.childMsg);
         }
     }
 </script>
