@@ -1,32 +1,23 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-02-20 21:37:18
+ * @LastEditTime: 2020-02-20 22:07:47
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \VueElement-admin-Project\my-app\src\App.vue
+ -->
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <m-parent></m-parent>
   </div>
 </template>
-
+<script>
+import MParent from './views/Parent'
+export default {
+  components:{
+    MParent
+  }
+}
+</script>
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
