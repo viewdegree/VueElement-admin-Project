@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-02-20 22:02:30
- * @LastEditTime: 2020-02-21 07:16:31
+ * @LastEditTime: 2020-02-21 08:00:56
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \VueElement-admin-Project\my-app\src\views\Child.vue
@@ -26,7 +26,10 @@
         },
         data(){
             return {
-                childMsg: 'child msg'
+                childMsg: 'child msg',
+                a:'childMsga',
+                b:'childMsgb',
+                c:'childMsgc',
             }
         },
         methods:{
@@ -36,9 +39,12 @@
         },
         // 自动触发 采用生命周期的挂载函数
         mounted(){
+            console.log('attrs',this.$attrs);
             bus.$on('msg',(val)=>{
                 this.childMsg = val
             })
+            //用listens的属性传递给上级需要用到emit方法
+            this.$emit('getData','我来自孙子组件')
         }
     }
 </script>
