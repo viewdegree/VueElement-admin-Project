@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-02-20 22:02:19
- * @LastEditTime: 2020-02-21 13:25:37
+ * @LastEditTime: 2020-02-21 13:29:24
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \VueElement-admin-Project\my-app\src\views\Parent.vue
@@ -17,7 +17,7 @@
 </template>
 
 <script>
-    import {mapState} from 'vuex'
+    import {mapState,mapMutations} from 'vuex'
     import MChild from './Child'
     export default {
         computed:mapState({
@@ -35,9 +35,9 @@
             showMsg(val){
                 this.parentMsg = val;
             },
-            add(){
-                this.$store.commit('add')
-            }
+            ...mapMutations({
+                add:'add'
+            })
         },
         mounted(){
             // 这是一个组件
