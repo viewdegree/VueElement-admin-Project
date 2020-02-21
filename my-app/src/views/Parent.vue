@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-02-20 22:02:19
- * @LastEditTime: 2020-02-21 13:14:03
+ * @LastEditTime: 2020-02-21 13:25:37
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \VueElement-admin-Project\my-app\src\views\Parent.vue
@@ -10,6 +10,7 @@
     <div>
         <h1>Parent</h1>
         <h5>vuex <span style="color:red">{{count}}</span></h5>
+        <button @click="add">增加Vuex里的值</button>
         <!-- 传递$attrs的必须在中间层组件绑定$attrs,而且不能用简写-->
         <m-child :msg="parentMsg"  @showMsg="showMsg" ref="child" v-bind="$attrs" v-on="$listeners"></m-child>
     </div>
@@ -33,6 +34,9 @@
         methods:{
             showMsg(val){
                 this.parentMsg = val;
+            },
+            add(){
+                this.$store.commit('add')
             }
         },
         mounted(){
