@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-02-20 21:37:18
- * @LastEditTime: 2020-02-21 12:06:11
+ * @LastEditTime: 2020-02-21 12:43:10
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \VueElement-admin-Project\my-app\src\App.vue
@@ -41,8 +41,15 @@ export default {
     },
     //通过函数跳转 也称为编程式导航
     toHome(){
+      //path是 和query搭配的
+      // this.$router.push({
+      //   path:'/home',
+      //   query:{name : 'Jack'}  
+      // })
+      //name是和params搭配的
       this.$router.push({
-        path:'/home',
+        name:'home',
+        params:{id : '3'}  
       })
     }
   },
