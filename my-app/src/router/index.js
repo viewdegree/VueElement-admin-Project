@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-02-20 21:37:18
- * @LastEditTime: 2020-02-21 11:39:18
+ * @LastEditTime: 2020-02-21 12:07:59
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \VueElement-admin-Project\my-app\src\router\index.js
@@ -14,7 +14,7 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path:'/home',
+    path:'/home/:id',
     //采用懒加载 表示访问的组件
     component: ()=>import('../views/Home.vue')
   }

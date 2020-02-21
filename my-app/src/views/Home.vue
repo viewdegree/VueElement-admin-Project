@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-02-21 08:32:51
- * @LastEditTime: 2020-02-21 11:00:58
+ * @LastEditTime: 2020-02-21 12:08:54
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \VueElement-admin-Project\my-app\src\views\Home.vue
@@ -9,6 +9,7 @@
 <template>
     <div>
         我是home组件
+        <h1>{{$route.params.id}}</h1>
     </div>
 </template>
 
