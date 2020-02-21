@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-02-20 21:37:18
- * @LastEditTime: 2020-02-21 12:59:09
+ * @LastEditTime: 2020-02-21 14:43:52
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \VueElement-admin-Project\my-app\src\router\index.js
@@ -15,9 +15,10 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    component:()=>import('../views/Parent.vue')
-
-  },{
+    component:()=>import('../views/Parent.vue'),
+    redirect: '/layout'    
+  },
+  {
     path:'/home/:id',
     name:'home',
     //采用懒加载 表示访问的组件
@@ -26,6 +27,10 @@ const routes = [
       path: '/child',
       component: ()=>import('../views/Child.vue')
     }]
+  },
+  {
+    path: '/layout',
+    component: ()=>import('../views/element/Layout.vue')
   }
 ]
 
