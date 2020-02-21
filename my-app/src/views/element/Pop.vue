@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-02-21 15:13:54
- * @LastEditTime: 2020-02-21 15:18:33
+ * @LastEditTime: 2020-02-21 15:35:45
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \VueElement-admin-Project\my-app\src\views\element\Pop.vue
@@ -10,11 +10,16 @@
     <div>
         <el-button type="text" @click="dialogVisible = true">点击打开 Dialog</el-button>
 
-        <el-dialog
+        <!-- <el-dialog
         title="提示"
         :visible.sync="dialogVisible"
         width="30%"
-        :before-close="handleClose">
+        :before-close="handleClose"> -->
+         <el-dialog
+        title="提示"
+        :visible="dialogVisible"
+        width="30%"
+        :before-close="handleClose2">
         <span>这是一段信息</span>
         <span slot="footer" class="dialog-footer">
             <el-button @click="dialogVisible = false">取 消</el-button>
@@ -35,6 +40,14 @@
       handleClose(done) {
         this.$confirm('确认关闭？')
           .then(_ => {
+            done();
+          })
+          .catch(_ => {});
+      },
+      handleClose2(done) {
+        this.$confirm('确认关闭？')
+          .then(_ => {
+              this.dialogVisible = false;
             done();
           })
           .catch(_ => {});
