@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-02-20 22:02:19
- * @LastEditTime: 2020-02-21 14:06:37
+ * @LastEditTime: 2020-02-21 14:13:17
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \VueElement-admin-Project\my-app\src\views\Parent.vue
@@ -24,7 +24,7 @@
     export default {
         computed:{
             ...mapState({
-                count:'count'
+                count:state=>state.text.count
             }),
             //写成解析对象写法,只有属性名与Vuex里的getters名相同时可以用数组字符串代替
             ...mapGetters([
