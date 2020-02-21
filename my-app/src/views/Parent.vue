@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-02-20 22:02:19
- * @LastEditTime: 2020-02-21 13:01:11
+ * @LastEditTime: 2020-02-21 13:14:03
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \VueElement-admin-Project\my-app\src\views\Parent.vue
@@ -16,13 +16,12 @@
 </template>
 
 <script>
+    import {mapState} from 'vuex'
     import MChild from './Child'
     export default {
-        computed:{
-            count(){
-                return this.$store.state.count
-            }
-        },
+        computed:mapState({
+            count:'count'
+        }),
         data(){
             return{
                 parentMsg: "from Parent msg"       
