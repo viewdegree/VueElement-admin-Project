@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-02-20 21:37:18
- * @LastEditTime: 2020-02-21 12:00:43
+ * @LastEditTime: 2020-02-21 12:06:11
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \VueElement-admin-Project\my-app\src\App.vue
@@ -11,6 +11,7 @@
     this is app
     <router-link to="/home">home</router-link>
     <!-- 第一次不加载,当点击router-link才会显示,但此时再返回首页,router-view还是依然显示 -->
+    <button @click="toHome">home</button>
     <router-view> </router-view>
     <!-- 多页面实现跳转需要a标签 但是单页面需要route-link -->
     <!-- <button @click="passMsg">传你</button>
@@ -38,6 +39,12 @@ export default {
     getData (val) {
       console.log(val);
     },
+    //通过函数跳转 也称为编程式导航
+    toHome(){
+      this.$router.push({
+        path:'/home',
+      })
+    }
   },
   // mounted(){
   //   console.log('listeners', this.$listeners);
