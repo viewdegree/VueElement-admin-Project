@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-02-20 21:37:18
- * @LastEditTime: 2020-02-21 13:33:55
+ * @LastEditTime: 2020-02-21 13:41:08
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \VueElement-admin-Project\my-app\src\store\index.js
@@ -16,6 +16,12 @@ export default new Vuex.Store({
   state: {
     count:0
   },
+  getters:{
+    doubleCount(state){
+      return state.count*2
+    }
+  }
+  ,
   //定义同步的方法
   mutations: {
     add(state){
