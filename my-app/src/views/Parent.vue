@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-02-20 22:02:19
- * @LastEditTime: 2020-02-21 13:39:41
+ * @LastEditTime: 2020-02-21 14:06:37
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \VueElement-admin-Project\my-app\src\views\Parent.vue
@@ -19,16 +19,17 @@
 </template>
 
 <script>
-    import {mapState,mapMutations} from 'vuex'
+    import {mapState,mapMutations,mapGetters} from 'vuex'
     import MChild from './Child'
     export default {
         computed:{
             ...mapState({
                 count:'count'
             }),
-            doubleCount(){
-                return this.$store.getters.doubleCount
-            }
+            //写成解析对象写法,只有属性名与Vuex里的getters名相同时可以用数组字符串代替
+            ...mapGetters([
+                'doubleCount'
+            ])
         },
         data(){
             return{
